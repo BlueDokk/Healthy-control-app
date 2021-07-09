@@ -3,11 +3,13 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import DeleteSVG from '../assets/images/delete.svg';
 import { getRecordsFromFirestore, updateRecords } from './../actions/ui';
+import firestoreService from './../firebase/firestoreServices';
 
 export const Records = () => {
 
     const dispatch = useDispatch();
     const { records } = useSelector(state => state.ui);
+    const { uid: userId } = useSelector(state => state.auth);
 
     useEffect(()=>{
 
@@ -21,6 +23,7 @@ export const Records = () => {
 
         const recordsFiltered = records.filter(record => record.recordId !== recordId );
         dispatch(updateRecords(recordsFiltered));
+        firestoreService.saveRecord(recordsFiltered, userId);
 
     }
 
