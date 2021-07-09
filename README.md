@@ -1,6 +1,6 @@
 
 
-# Healthy Control App
+# Healthy Control APP
 This project was developed with React and Redux. It is an application to calculate the body mass index (BMI).
 <br>
 <br>
