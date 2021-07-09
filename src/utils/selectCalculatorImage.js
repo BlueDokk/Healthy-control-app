@@ -39,7 +39,7 @@ export const selectCalculatorImage = (bmi) => {
             </picture>
         );
     };
-    if (18.5 < bmi && bmi <= 24.9) {
+    if (18.5 <= bmi && bmi <= 24.9) {
         return (
         <picture>
             <source type="image/webp"
@@ -50,7 +50,7 @@ export const selectCalculatorImage = (bmi) => {
         </picture>
         );
     };
-    if (25 < bmi && bmi <= 29.9) {
+    if (25 <= bmi && bmi <= 29.9) {
         return (
             <picture>
                 <source type="image/webp"
@@ -61,7 +61,7 @@ export const selectCalculatorImage = (bmi) => {
             </picture>
         );
     };
-    if (30 < bmi && bmi <= 34.9) {
+    if (30 <= bmi && bmi <= 34.9) {
         return (
             <picture>
                 <source type="image/webp"
