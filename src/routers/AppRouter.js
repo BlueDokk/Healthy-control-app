@@ -20,12 +20,14 @@ export const AppRouter = () => {
 
     const dispatch = useDispatch();
 
+    // Flag to trigger the loading once the user has been identified
     const [checking, setChecking] = useState(true);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
     useEffect(() => {
 
+        // Active session observer
         authService.currentUser((user) => {
 
             if (user?.uid) {

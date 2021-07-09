@@ -42,6 +42,7 @@ export const Calculator = () => {
         const normalizedWeight = parseFloat(weight);
         const normalizeHeight = parseFloat(height) / 100;
 
+        // Calculate BMI only if there are numeric entries
         const result = (typeof normalizedWeight === 'number' && typeof normalizeHeight === 'number') ?
             (normalizedWeight / (normalizeHeight * normalizeHeight)).toFixed(1)
             : 0;
@@ -57,10 +58,10 @@ export const Calculator = () => {
 
     const handleSaveRecord = () => {
 
-        if (height > 0 || weight > 0){
+        if (height > 0 || weight > 0) {
             calculateBMI(weight, height);
             dispatch(saveRecord());
-        }else {
+        } else {
             toast.error('Invalid height or weight values');
         }
 

@@ -10,7 +10,8 @@ export const Records = () => {
     const { records } = useSelector(state => state.ui);
 
     useEffect(()=>{
-        dispatch(getRecordsFromFirestore())
+
+        dispatch(getRecordsFromFirestore());
         
     }, [dispatch]);
 

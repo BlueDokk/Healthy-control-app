@@ -11,7 +11,6 @@ export const Login = ({ history }) => {
 
    const dispatch =  useDispatch();
 
-    // Set initial state of form fields.
     const [userState, setUserState] = useState({
         email: '',
         password: '',
@@ -29,7 +28,6 @@ export const Login = ({ history }) => {
                 ...errorState,
                 [target.name]: error
             });
-            // dispatch(setError(error))
         }
         else delete errorState[target.name];
 
